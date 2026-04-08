@@ -3,64 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astra Raksell - Super Space Adventurer Hub</title>
+    <title>Astra Raksell — Super Space Adventurer Hub</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="assets/img/astra_logo.png" alt="Astra Logo">
+            <img src="assets/img/astra_logo.png" alt="Astra Raksell">
         </div>
         <nav>
             <a href="index.html" class="active">Comms Terminal</a>
             <a href="lore.html">Character Database</a>
             <a href="gallery.html">Visual Archives</a>
+            <a href="lore_extended.html">Field Logs</a>
         </nav>
     </header>
 
     <div class="container animate-in">
-        <div class="panel main-content">
-            <!--
-           <div class="hero-banner">
-                <img src="assets/img/hero_illustration.jpg" alt="Astra Illustration Banner">
-            </div> -->
 
-            <h1>Signal Established</h1>
-            <p>Welcome to the official communication terminal of the Super Space Adventurer <strong>Astra Raksell</strong>!</p>
-            
-            <h2>Current Objective: Content Creation</h2>
-            <p>Since young I've always wanted to be a content creator of some kind, after the boom in Vtubing, I figured out this would fit perfectly for my goals. I love writing, drawing, and working on my overambitious lore stuff. Big fan of Tokusatsu, JRPGs, and platformers.</p>
+        <!-- LEFT: main content -->
+        <div class="main-content">
 
-            <h2>Commissions</h2>
-            <p>I do art! My commissions are currently open on Vgen.</p>
-                    
-            <img src="assets/img/commission_sheet1.jpg" alt="Commission Prices" class="comm-graphic">
-            <img src="assets/img/commission_sheet2.jpg" alt="Commission Prices 2" class="comm-graphic">
+            <!-- HERO -->
+            <div class="hero panel" style="padding:0; border:1px solid rgba(133,53,168,0.4); border-left:3px solid var(--orange);">
+                <div class="hero-bg"></div>
+                <img src="assets/img/astra_profile.png" alt="Astra Raksell" class="hero-art">
+                <div class="hero-content">
+                    <div class="hero-eyebrow">Signal Established</div>
+                    <h1>
+                        Astra Raksell
+                        <span class="name-sub">Super Space Adventurer</span>
+                    </h1>
+                    <p class="hero-desc">
+                        VTuber · Artist · Lore-crafter.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-val">1000+</span>
+                            <span class="hero-stat-lbl">Years old</span>
+                        </div>
+                        <div class="hero-divider"></div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-val">100</span>
+                            <span class="hero-stat-lbl">Speed</span>
+                        </div>
+                        <div class="hero-divider"></div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-val">10</span>
+                            <span class="hero-stat-lbl">Luck</span>
+                        </div>
+                        <div class="hero-divider"></div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-val">∞</span>
+                            <span class="hero-stat-lbl">Aurora Arm</span>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="lore.html" class="btn">Character Database</a>
+                        <a href="gallery.html" class="btn btn-orange">Visual Archives</a>
+                    </div>
+                </div>
+            </div>
 
-            <a href="https://vgen.co/AstraRaksell" class="btn">Commission Info</a>
+            <!-- QUICK INFO CARDS -->
+            <div class="card-row">
+                <div class="info-card">
+                    <div class="info-card-label">Class</div>
+                    <div class="info-card-value">VTuber / Artist</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-label">Commissions</div>
+                    <div class="info-card-value"><span class="badge badge-open">Open</span></div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-label">Species</div>
+                    <div class="info-card-value">Aurorian <span style="color:var(--text-dim);">(?)</span></div>
+                </div>
+            </div>
+
+            <!-- ABOUT -->
+            <div class="panel">
+                <h2>Mission Log</h2>
+                <p>
+                    Since young I've always wanted to be a content creator of some kind. After the boom in Vtubing, I figured out this would fit perfectly for my goals. I love writing, drawing, and working on my overambitious lore stuff. Big fan of Tokusatsu, JRPGs, and platformers.
+                </p>
+                <p>
+                    This terminal is home base for everything related to the Astra Raksell project — character lore, art archives, and whatever else gets dragged in from the void.
+                </p>
+
+                <h2>Commissions</h2>
+                <p>Art commissions are currently open over on Vgen. Check the sheet below for pricing and details.</p>
+
+                <img src="assets/img/commission_sheet1.jpg" alt="Commission Prices" class="comm-graphic">
+                <img src="assets/img/commission_sheet2.jpg" alt="Commission Prices 2" class="comm-graphic">
+
+                <a href="https://vgen.co/AstraRaksell" class="btn" target="_blank" rel="noopener">Commission Info ↗</a>
+            </div>
+
         </div>
 
-        <div class="panel sidebar">
-            <h2>Status</h2>
-            <ul>
-                <li><strong>Status:</strong> Online</li>
-                <li><strong>Class:</strong> VTuber / Artist</li>
-                <li><strong>Commissions:</strong> Open</li>
-            </ul>
-            
-            <h2>Social Links</h2>
-            <ul>
-                <li><a href="https://www.twitch.tv/astraraksell">Twitch</a></li>
-                <li><a href="https://www.youtube.com/@AstraRaksell">YouTube</a></li>
-                <li><a href="https://x.com/AstraRaksell">Twitter / X</a></li>
-                <li><a href="https://www.tiktok.com/@astraraksell">TikTok</a></li>
-                <li><a href="https://bsky.app/profile/astra-raksell.vtubers.social">Bluesky</a></li>
-            </ul>
-        </div>
+        <!-- RIGHT: sidebar -->
+        <aside class="sidebar">
+
+            <div class="panel">
+                <h3>System Status</h3>
+                <ul class="status-list">
+                    <li><span class="label">Online</span> <span class="badge badge-online">● Active</span></li>
+                    <li><span class="label">Comms</span> <span style="color:var(--text);">Open</span></li>
+                    <li><span class="label">Commissions</span> <span class="badge badge-open">Open</span></li>
+                    <li><span class="label">Species</span> <span class="badge badge-aurora">Aurorian ?</span></li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h3>Transmission Links</h3>
+                <ul class="social-list">
+                    <li><a href="https://www.twitch.tv/astraraksell" target="_blank" rel="noopener">Twitch</a></li>
+                    <li><a href="https://www.youtube.com/@AstraRaksell" target="_blank" rel="noopener">YouTube</a></li>
+                    <li><a href="https://x.com/AstraRaksell" target="_blank" rel="noopener">Twitter / X</a></li>
+                    <li><a href="https://www.tiktok.com/@astraraksell" target="_blank" rel="noopener">TikTok</a></li>
+                    <li><a href="https://bsky.app/profile/astra-raksell.vtubers.social" target="_blank" rel="noopener">Bluesky</a></li>
+                    <li><a href="https://vgen.co/AstraRaksell" target="_blank" rel="noopener">Vgen — Commissions</a></li>
+                </ul>
+            </div>
+
+            <div class="panel">
+                <h3>Operator's Code</h3>
+                <blockquote style="margin:0 0 10px;">"Chocolate first, everything else second."</blockquote>
+                <blockquote style="margin:0;">"Leave every place better than you found it. Or at least try. Explosions happen."</blockquote>
+            </div>
+
+        </aside>
     </div>
-    <footer>    
-        <p>&copy; 2026 Astra Raksell. All rights reserved. | "Chocolate first, everything else second."</p>
+
+    <footer>
+        <p>&copy; 2026 Astra Raksell. All rights reserved. &nbsp;|&nbsp; <span>"Chocolate first, everything else second."</span></p>
     </footer>
+
 </body>
 </html>

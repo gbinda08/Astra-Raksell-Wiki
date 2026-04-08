@@ -3,73 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astra Raksell - Super Space Adventurer Gallery</title>
+    <title>Astra Raksell — Visual Archives</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="assets/img/astra_logo.png" alt="Astra Logo">
+            <img src="assets/img/astra_logo.png" alt="Astra Raksell">
         </div>
         <nav>
             <a href="index.html">Comms Terminal</a>
             <a href="lore.html">Character Database</a>
             <a href="gallery.html" class="active">Visual Archives</a>
+            <a href="lore_extended.html">Field Logs</a>
         </nav>
     </header>
 
-    <div class="container">
-        <div class="main-content" style="flex: 1;">
-            <h1>Image Gallery</h1>
-            <p>Visual references, outfits, and concepts for Astra.</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="assets/img/Bust_up.png" alt="Astra Bust">
-                    <p class="caption">Character Bust / Portrait</p>
-                </div>
+    <div class="container animate-in">
+        <div class="main-content" style="flex:1; width:100%;">
 
-                <div class="gallery-item">
-                    <img src="assets/img/Bust_up_booba.png" alt="Astra Bust Booba Toggle">
-                    <p class="caption">Character Bust / Portrait (Booba Toggle)</p>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="assets/img/Full_Body_Model_1.png" alt="Full-body Civilian Model with Jacket">
-                    <p class="caption">Full-body Civilian Model with Jacket</p>
-                </div>
+            <div class="panel">
+                <h1>Visual Archives</h1>
+                <p class="lore-intro">Reference sheets, outfits, and concept art for Astra Raksell. Click any image to expand.</p>
 
-                <div class="gallery-item">
-                    <img src="assets/img/Full_Body_Model_2.png" alt="Full-body Civilian Model without Jacket">
-                    <p class="caption">Full-body Civilian Model without Jacket</p>
-                </div>
+                <div class="gallery-grid" id="gallery">
 
-                <div class="gallery-item">
-                    <img src="assets/img/Full_Body_Model_3.png" alt="Full-body Battle Model">
-                    <p class="caption">Full-body Battle Model</p>
-                </div>
+                    <div class="gallery-item" data-src="assets/img/Bust_up.png" data-caption="Character Bust / Portrait">
+                        <img src="assets/img/Bust_up.png" alt="Astra Bust" loading="lazy">
+                        <div class="gallery-overlay"><div class="gallery-overlay-icon">⊕</div></div>
+                        <p class="caption">Character Bust / Portrait</p>
+                    </div>
 
-                <div class="gallery-item">
-                    <img src="assets/img/Full_Body_Model_4.png" alt="Full-body Battle Model without Armor">
-                    <p class="caption">Full-body Battle Model without Armor</p>
-                </div>
+                    <div class="gallery-item" data-src="assets/img/Bust_up_booba.png" data-caption="Character Bust — Booba Toggle">
+                        <img src="assets/img/Bust_up_booba.png" alt="Astra Bust Alt" loading="lazy">
+                        <div class="gallery-overlay"><div class="gallery-overlay-icon">⊕</div></div>
+                        <p class="caption">Character Bust — Booba Toggle</p>
+                    </div>
 
-                <div class="gallery-item">
-                    <img src="assets/img/Astra 3.0 Civilian Form Design.jpg" alt="Civilian Form">
-                    <p class="caption">Civilian Form Reference Sheet</p>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="assets/img/Astra 3.0 Battle Form Design.jpg" alt="Battle Form">
-                    <p class="caption">Battle Form Reference Sheet</p>
+                    <div class="gallery-item" data-src="assets/img/Full_Body_Model_1.png" data-caption="Full-body Civilian — With Jacket">
+                        <img src="assets/img/Full_Body_Model_1.png" alt="Civilian With Jacket" loading="lazy">
+                        <div class="gallery-overlay"><div class="gallery-overlay-icon">⊕</div></div>
+                        <p class="caption">Civilian — With Jacket</p>
+                    </div>
+
+                    <div class="gallery-item" data-src="assets/img/Full_Body_Model_2.png" data-caption="Full-body Civilian — Without Jacket">
+                        <img src="assets/img/Full_Body_Model_2.png" alt="Civilian Without Jacket" loading="lazy">
+                        <div class="gallery-overlay"><div class="gallery-overlay-icon">⊕</div></div>
+                        <p class="caption">Civilian — Without Jacket</p>
+                    </div>
+
+                    <div class="gallery-item" data-src="assets/img/Full_Body_Model_3.png" data-caption="Full-body Battle Mode">
+                        <img src="assets/img/Full_Body_Model_3.png" alt="Battle Mode" loading="lazy">
+                        <div class="gallery-overlay"><div class="gallery-overlay-icon">⊕</div></div>
+                        <p class="caption">Battle Mode</p>
+                    </div>
+
+                    <div class="gallery-item" data-src="assets/img/Full_Body_Model_4.png" data-caption="Battle Mode — Without Armor">
+                        <img src="assets/img/Full_Body_Model_4.png" alt="Battle Mode No Armor" loading="lazy">
+                        <div class="gallery-overlay"><div class="gallery-overlay-icon">⊕</div></div>
+                        <p class="caption">Battle Mode — Without Armor</p>
+                    </div>
+
+                    <div class="gallery-item" data-src="assets/img/Astra 3.0 Civilian Form Design.jpg" data-caption="Civilian Form Reference Sheet">
+                        <img src="assets/img/Astra 3.0 Civilian Form Design.jpg" alt="Civilian Ref Sheet" loading="lazy">
+                        <div class="gallery-overlay"><div class="gallery-overlay-icon">⊕</div></div>
+                        <p class="caption">Civilian Form Reference Sheet</p>
+                    </div>
+
+                    <div class="gallery-item" data-src="assets/img/Astra 3.0 Battle Form Design.jpg" data-caption="Battle Form Reference Sheet">
+                        <img src="assets/img/Astra 3.0 Battle Form Design.jpg" alt="Battle Ref Sheet" loading="lazy">
+                        <div class="gallery-overlay"><div class="gallery-overlay-icon">⊕</div></div>
+                        <p class="caption">Battle Form Reference Sheet</p>
+                    </div>
+
                 </div>
             </div>
+
         </div>
     </div>
-    
-    <footer>    
-        <p>&copy; 2026 Astra Raksell. All rights reserved. | "Chocolate first, everything else second."</p>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lightbox-close" id="lb-close" aria-label="Close">✕</button>
+        <button class="lightbox-nav lightbox-prev" id="lb-prev" aria-label="Previous">‹</button>
+        <img id="lb-img" src="" alt="">
+        <p class="lightbox-caption" id="lb-caption"></p>
+        <button class="lightbox-nav lightbox-next" id="lb-next" aria-label="Next">›</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Astra Raksell. All rights reserved. &nbsp;|&nbsp; <span>"Chocolate first, everything else second."</span></p>
     </footer>
+
+    <script>
+        const items   = Array.from(document.querySelectorAll('.gallery-item'));
+        const lb      = document.getElementById('lightbox');
+        const lbImg   = document.getElementById('lb-img');
+        const lbCap   = document.getElementById('lb-caption');
+        let current   = 0;
+
+        function open(idx) {
+            current = idx;
+            const item = items[idx];
+            lbImg.src = item.dataset.src;
+            lbImg.alt = item.dataset.caption;
+            lbCap.textContent = item.dataset.caption;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function close() {
+            lb.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function prev() { open((current - 1 + items.length) % items.length); }
+        function next() { open((current + 1) % items.length); }
+
+        items.forEach((item, i) => item.addEventListener('click', () => open(i)));
+
+        document.getElementById('lb-close').addEventListener('click', close);
+        document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); prev(); });
+        document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); next(); });
+
+        lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+        document.addEventListener('keydown', e => {
+            if (!lb.classList.contains('active')) return;
+            if (e.key === 'Escape')      close();
+            if (e.key === 'ArrowLeft')   prev();
+            if (e.key === 'ArrowRight')  next();
+        });
+    </script>
+
 </body>
 </html>
