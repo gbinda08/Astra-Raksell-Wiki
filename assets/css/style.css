@@ -1,25 +1,31 @@
 /* assets/css/style.css */
 
-/* 1. Font Face Setup */
+/* 1. Local Font Setup */
 @font-face {
     font-family: 'Sarpanch';
     src: url('../fonts/sarpanch-regular.woff2') format('woff2'),
          url('../fonts/sarpanch-regular.woff') format('woff'),
          url('../fonts/sarpanch-regular.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 }
 
-/* 2. Variables for Astra's Aesthetic */
+@font-face {
+    font-family: 'Sarpanch';
+    src: url('../fonts/sarpanch-bold.woff2') format('woff2'),
+         url('../fonts/sarpanch-bold.woff') format('woff'),
+         url('../fonts/sarpanch-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 2. Astra's Aesthetic Variables */
 :root {
-    --bg-dark: #0d0d12;
-    --panel-bg: #1a1a24;
-    --astra-purple: #8A2BE2;
-    --astra-orange: #FF7F50;
-    --astra-yellow: #FFD700;
+    --astra-purple: #8535A8;
+    --astra-orange: #E8782E;
+    --astra-dark: #0f0a14;
     --text-main: #e0e0e0;
     --text-muted: #a0a0b0;
-    --border-color: #333;
 }
 
 * {
@@ -29,22 +35,30 @@
 }
 
 body {
-    background-color: var(--bg-dark);
+    background: url('../img/background.jpg') center center fixed;
+    background-size: cover;
+    background-color: var(--astra-dark);
     color: var(--text-main);
-    font-family: 'Sarpanch', sans-serif;
+    font-family: 'Sarpanch', monospace;
     line-height: 1.6;
-    background-image: radial-gradient(circle at top right, #1f102a 0%, transparent 40%),
-                      radial-gradient(circle at bottom left, #291510 0%, transparent 40%);
-    background-attachment: fixed;
 }
 
-/* Navigation */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 10, 20, 0.85); 
+    z-index: -1;
+}
+
+/* --- NAVIGATION --- */
 nav {
-    background: var(--panel-bg);
-    border-bottom: 2px solid var(--astra-purple);
-    padding: 15px 50px;
     display: flex;
+    justify-content: center;
     gap: 20px;
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(15, 10, 20, 0.95) 0%, transparent 100%);
+    border-bottom: 1px solid var(--astra-purple);
 }
 
 nav a {
@@ -53,112 +67,108 @@ nav a {
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: color 0.3s;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
 }
 
 nav a:hover, nav a.active {
-    color: var(--astra-yellow);
+    border: 1px solid var(--astra-purple);
+    background: rgba(133, 53, 168, 0.2);
+    border-left: 0.3em solid var(--astra-orange);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.5em), calc(100% - 0.5em) 100%, 0 100%);
 }
 
-/* Layout */
+/* --- MAIN LAYOUT --- */
 .container {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
-.main-content {
-    flex: 3;
-    background: var(--panel-bg);
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-
-.infobox-sidebar {
-    flex: 1;
-}
-
-/* Typography */
-h1 { color: var(--astra-yellow); font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
-h2 { color: var(--astra-purple); border-bottom: 1px solid var(--border-color); padding-bottom: 5px; margin: 30px 0 15px 0; }
-h3 { color: var(--astra-orange); margin: 20px 0 10px 0; }
-p { margin-bottom: 15px; }
-ul { margin-left: 20px; margin-bottom: 15px; }
-li { margin-bottom: 5px; }
-
-/* Infobox Styling */
-.infobox {
-    background: var(--panel-bg);
-    border: 2px solid var(--astra-purple);
-    border-radius: 8px;
+/* --- PANEL AESTHETIC --- */
+.panel {
+    position: relative;
+    background: linear-gradient(90deg, rgba(15, 10, 20, 0.95) 0%, rgba(20, 10, 30, 0.7) 100%);
+    border: 1px solid var(--astra-purple);
+    border-left: 0.4em solid var(--astra-orange);
+    color: var(--text-main);
+    padding: 2em;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1.5em), calc(100% - 1.5em) 100%, 0 100%);
+    box-shadow: 0 0 15px rgba(133, 53, 168, 0.3);
+    margin-bottom: 20px;
     overflow: hidden;
 }
 
-.infobox-header {
-    background: linear-gradient(90deg, var(--astra-purple), var(--astra-orange));
+/* Grid texture inside panels */
+.panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(133, 53, 168, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(133, 53, 168, 0.05) 1px, transparent 1px);
+    background-size: 18px 18px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.panel > * { position: relative; z-index: 1; }
+
+.main-content { flex: 3; min-width: 300px; }
+.sidebar { flex: 1; min-width: 250px; }
+
+/* --- TYPOGRAPHY & ACCENTS --- */
+h1, h2, h3 { position: relative; padding-bottom: 5px; margin-bottom: 15px; }
+
+h1 { color: var(--astra-orange); font-size: 2.5rem; text-transform: uppercase; }
+h2 { color: var(--astra-purple); margin-top: 30px; font-size: 1.8rem; }
+h3 { color: #fff; margin-top: 20px; font-size: 1.3rem; }
+
+/* The gradient underline */
+h1::after, h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--astra-purple), rgba(232, 120, 46, 0.5), transparent);
+}
+
+p, ul { margin-bottom: 15px; }
+ul { margin-left: 20px; }
+li { margin-bottom: 5px; }
+
+/* --- LINKS & BUTTONS --- */
+a { color: var(--astra-orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.btn {
+    display: inline-block;
+    background: rgba(133, 53, 168, 0.2);
+    border: 1px solid var(--astra-purple);
+    border-left: 0.3em solid var(--astra-orange);
     color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.5em), calc(100% - 0.5em) 100%, 0 100%);
 }
 
-.infobox img {
-    width: 100%;
-    display: block;
-    border-bottom: 2px solid var(--astra-purple);
+.btn:hover {
+    background: var(--astra-purple);
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(133, 53, 168, 0.8);
 }
 
-.infobox table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.infobox th, .infobox td {
-    padding: 10px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.infobox th {
-    text-align: left;
-    color: var(--astra-yellow);
-    width: 40%;
-}
-
-.infobox td { text-align: right; }
-
-/* Quotes */
-blockquote {
-    border-left: 4px solid var(--astra-orange);
-    padding-left: 15px;
-    font-style: italic;
-    color: var(--text-muted);
-    background: rgba(255, 127, 80, 0.1);
-    padding: 15px;
-    border-radius: 0 8px 8px 0;
-}
-
-/* Gallery Grid */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 2px solid var(--border-color);
-    transition: transform 0.3s, border-color 0.3s;
-    cursor: pointer;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05);
-    border-color: var(--astra-purple);
-}
+/* --- INFOBOX TABLES --- */
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th, td { padding: 10px; border-bottom: 1px solid rgba(133, 53, 168, 0.3); }
+th { text-align: left; color: var(--astra-orange); width: 40%; }
+td { text-align: right; }
+img.profile-pic { width: 100%; border-bottom: 2px solid var(--astra-purple); margin-bottom: 15px; }
