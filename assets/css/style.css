@@ -1,0 +1,164 @@
+/* assets/css/style.css */
+
+/* 1. Font Face Setup */
+@font-face {
+    font-family: 'Sarpanch';
+    src: url('../fonts/sarpanch-regular.woff2') format('woff2'),
+         url('../fonts/sarpanch-regular.woff') format('woff'),
+         url('../fonts/sarpanch-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2. Variables for Astra's Aesthetic */
+:root {
+    --bg-dark: #0d0d12;
+    --panel-bg: #1a1a24;
+    --astra-purple: #8A2BE2;
+    --astra-orange: #FF7F50;
+    --astra-yellow: #FFD700;
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0b0;
+    --border-color: #333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Sarpanch', sans-serif; /* Using your custom font! */
+    line-height: 1.6;
+    background-image: radial-gradient(circle at top right, #1f102a 0%, transparent 40%),
+                      radial-gradient(circle at bottom left, #291510 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+/* Navigation */
+nav {
+    background: var(--panel-bg);
+    border-bottom: 2px solid var(--astra-purple);
+    padding: 15px 50px;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--astra-yellow);
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.main-content {
+    flex: 3;
+    background: var(--panel-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.infobox-sidebar {
+    flex: 1;
+}
+
+/* Typography */
+h1 { color: var(--astra-yellow); font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+h2 { color: var(--astra-purple); border-bottom: 1px solid var(--border-color); padding-bottom: 5px; margin: 30px 0 15px 0; }
+h3 { color: var(--astra-orange); margin: 20px 0 10px 0; }
+p { margin-bottom: 15px; }
+ul { margin-left: 20px; margin-bottom: 15px; }
+li { margin-bottom: 5px; }
+
+/* Infobox Styling */
+.infobox {
+    background: var(--panel-bg);
+    border: 2px solid var(--astra-purple);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.infobox-header {
+    background: linear-gradient(90deg, var(--astra-purple), var(--astra-orange));
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.infobox img {
+    width: 100%;
+    display: block;
+    border-bottom: 2px solid var(--astra-purple);
+}
+
+.infobox table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.infobox th, .infobox td {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.infobox th {
+    text-align: left;
+    color: var(--astra-yellow);
+    width: 40%;
+}
+
+.infobox td { text-align: right; }
+
+/* Quotes */
+blockquote {
+    border-left: 4px solid var(--astra-orange);
+    padding-left: 15px;
+    font-style: italic;
+    color: var(--text-muted);
+    background: rgba(255, 127, 80, 0.1);
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    border-color: var(--astra-purple);
+}
