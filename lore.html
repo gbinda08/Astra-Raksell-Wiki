@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astra Raksell - Super Space Adventurer Wiki</title>
+    <title>Astra Lore | Character Database</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="active">Wiki Home</a>
-        <a href="gallery.html">Gallery</a>
-    </nav>
+    <header>
+        <div class="logo-container">
+            <img src="assets/img/astra_logo.png" alt="Astra Logo">
+        </div>
+        <nav>
+            <a href="index.html">Comms Terminal</a>
+            <a href="lore.html" class="active">Character Database</a>
+            <a href="gallery.html">Visual Archives</a>
+        </nav>
+    </header>
 
-    <div class="container">
-        <div class="main-content">
+    <div class="container animate-in">
+        
+        <div class="panel main-content">
             <h1>Astra Raksell</h1>
             <p><strong>Astra Raksell</strong> is a millennia-old "Super Space Adventurer" forged from the universe's purest, uncontained magic. Roaming the cosmos with a shapeshifting plasma arm and an inexhaustible appetite for coffee and chocolate, they take on the galaxy's most dangerous jobs. Despite being a literal "glass cannon," this ever-curious figure is always chasing the next grand adventure—and ensuring they leave every planet a little better than they found it.</p>
 
@@ -74,12 +81,13 @@
             </ul>
         </div>
 
-        <aside class="infobox-sidebar">
-            <div class="infobox">
-                <div class="infobox-header">Astra Raksell</div>
-                <img src="assets/img/astra_profile.png" alt="Astra Raksell Profile">
+        <aside class="sidebar">
+            <div class="panel">
+                <img src="assets/img/astra_profile.png" alt="Astra Raksell Profile" class="profile-pic">
+                
+                <h3>Bio Data</h3>
                 <table>
-                    <tr><th>Also Known As</th><td>Astie, Rak, Super Space Adventurer</td></tr>
+                    <tr><th>Alias</th><td>Astie, Rak, Super Space Adventurer</td></tr>
                     <tr><th>Species</th><td>Aurorian (?)</td></tr>
                     <tr><th>Age</th><td>1,000+ years old</td></tr>
                     <tr><th>Birthday</th><td>August 8, 20XX</td></tr>
@@ -89,7 +97,8 @@
                     <tr><th>Occupation</th><td>Adventurer</td></tr>
                     <tr><th>Alignment</th><td>Neutral Good</td></tr>
                 </table>
-                <div class="infobox-header" style="font-size: 1.2rem; background: var(--panel-bg); color: var(--astra-yellow); border-top: 2px solid var(--astra-purple); border-bottom: 2px solid var(--astra-purple);">Combat Stats</div>
+                
+                <h3>Combat Stats</h3>
                 <table>
                     <tr><th>HP</th><td>72</td></tr>
                     <tr><th>STR</th><td>85</td></tr>
@@ -101,6 +110,10 @@
             </div>
         </aside>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Astra Raksell. All rights reserved. | "Chocolate first, everything else second."</p>
+    </footer>
 
 </body>
 </html>

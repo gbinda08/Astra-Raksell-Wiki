@@ -41,6 +41,9 @@ body {
     color: var(--text-main);
     font-family: 'Sarpanch', monospace;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 body::before {
@@ -51,14 +54,34 @@ body::before {
     z-index: -1;
 }
 
+/* --- ANIMATIONS --- */
+@keyframes portalOpen {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+    animation: portalOpen 0.6s ease-out forwards;
+}
+
 /* --- NAVIGATION --- */
-nav {
+header {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
     background: linear-gradient(180deg, rgba(15, 10, 20, 0.95) 0%, transparent 100%);
     border-bottom: 1px solid var(--astra-purple);
+}
+
+.logo-container img {
+    height: 50px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
 }
 
 nav a {
@@ -86,8 +109,8 @@ nav a:hover, nav a.active {
     padding: 0 20px;
     display: flex;
     gap: 30px;
-    flex-wrap: wrap;
     align-items: flex-start;
+    flex: 1;
 }
 
 /* --- PANEL AESTHETIC --- */
@@ -119,12 +142,36 @@ nav a:hover, nav a.active {
 
 .panel > * { position: relative; z-index: 1; }
 
-.main-content { flex: 3; min-width: 300px; }
-.sidebar { flex: 1; min-width: 250px; }
+.main-content { flex: 1 1 65%; min-width: 300px; }
+.sidebar { flex: 0 0 320px; max-width: 320px; }
+
+/* --- IMAGES (Banners, Commissions, Profile) --- */
+.hero-banner img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--astra-purple);
+    margin-bottom: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1.5em), calc(100% - 1.5em) 100%, 0 100%);
+}
+
+.comm-graphic {
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(133, 53, 168, 0.5);
+    border-left: 0.3em solid var(--astra-orange);
+    margin: 15px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+img.profile-pic { 
+    width: 100%; 
+    height: auto;
+    border-bottom: 2px solid var(--astra-purple); 
+    margin-bottom: 15px; 
+}
 
 /* --- TYPOGRAPHY & ACCENTS --- */
 h1, h2, h3 { position: relative; padding-bottom: 5px; margin-bottom: 15px; }
-
 h1 { color: var(--astra-orange); font-size: 2.5rem; text-transform: uppercase; }
 h2 { color: var(--astra-purple); margin-top: 30px; font-size: 1.8rem; }
 h3 { color: #fff; margin-top: 20px; font-size: 1.3rem; }
@@ -153,8 +200,7 @@ a:hover { text-decoration: underline; }
     border-left: 0.3em solid var(--astra-orange);
     color: white;
     padding: 10px 20px;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 10px; margin-right: 10px;
     text-transform: uppercase;
     transition: all 0.2s;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.5em), calc(100% - 0.5em) 100%, 0 100%);
@@ -166,9 +212,27 @@ a:hover { text-decoration: underline; }
     box-shadow: 0 0 10px rgba(133, 53, 168, 0.8);
 }
 
+.gallery-item .caption {
+    text-align: center;
+    font-size: 0.9em;     
+    color: #555;            
+    margin-top: 8px;         
+    font-style: italic;      
+}
+
 /* --- INFOBOX TABLES --- */
 table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-th, td { padding: 10px; border-bottom: 1px solid rgba(133, 53, 168, 0.3); }
+th, td { padding: 10px; border-bottom: 1px solid rgba(133, 53, 168, 0.3); font-size: 0.9rem; }
 th { text-align: left; color: var(--astra-orange); width: 40%; }
 td { text-align: right; }
-img.profile-pic { width: 100%; border-bottom: 2px solid var(--astra-purple); margin-bottom: 15px; }
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--astra-purple);
+    background: linear-gradient(0deg, rgba(15, 10, 20, 0.95) 0%, transparent 100%);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
