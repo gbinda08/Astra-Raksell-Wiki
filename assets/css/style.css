@@ -31,7 +31,7 @@
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
-    font-family: 'Sarpanch', sans-serif; /* Using your custom font! */
+    font-family: 'Sarpanch', sans-serif;
     line-height: 1.6;
     background-image: radial-gradient(circle at top right, #1f102a 0%, transparent 40%),
                       radial-gradient(circle at bottom left, #291510 0%, transparent 40%);
